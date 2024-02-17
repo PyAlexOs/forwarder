@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 align="center">Receive files from host</h1>
+<ul>
+    {% for file in files %}
+    <li>
+        <a href="{{ (request.path + '/' if request.path != '/' else '') + file }}">
+            {{ (request.path + '/' if request.path != '/' else '') + file }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
