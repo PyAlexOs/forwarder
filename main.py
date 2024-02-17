@@ -1,4 +1,5 @@
 import os
+from host import host
 from flask import Flask, request, render_template, redirect, send_from_directory
 from werkzeug.utils import secure_filename
 
@@ -36,4 +37,4 @@ def uploaded_file(filename):
 if __name__ == '__main__':
     app.config['UPLOAD_FOLDER'] = os.path.abspath("data")
     app.config['DOWNLOAD_FOLDER'] = os.path.abspath("data")
-    app.run(host="192.168.1.131", port=8000)
+    app.run(host=host, port=8000)
